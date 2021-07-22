@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+
+/* Initialisation des basiques */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+  color: black;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+button {
+  text-decoration: none;
+}
+
+.blue {
+  color: #0065fc;
+}
+
+h1 {
+  font-size: 1.4em;
+  line-height: 1.1em;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+/* Header */
+.primary {
+  width: 100%;
+  padding: 1.5em 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signIn {
+  font-weight: 700;
+}
+
+.secondary {
+  width: 100%;
+}
+
+.secondary ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.linkMenu {
+  width: 50%;
+  height: 100%;
+  padding: 0 0 1em 0;
+  border-bottom: 3px solid #f2f2f2;
+  text-align: center;
+}
+
+.selected {
+  color: #0065fc;
+  border-bottom: 3px solid #0065fc;
+}
+
+/* Introduction */
+.introduction {
+  padding: 1.8em 1.2em;
+}
+
+.introduction h1 {
+  padding-bottom: 0.5em;
+}
+
+.searchContainer {
+  width: 100%;
+  height: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.8em;
+  border: 1px solid #f2f2f2;
+  border-radius: 12px;
+}
+
+.icnArea {
+  height: 100%;
+  border-radius: 12px;
+  border: none;
+  padding: 14px;
+}
+
+.icnLocation {
+  background-color: #f2f2f2;
+}
+
+.searchInput {
+  height: 100%;
+  width: 100%;
+  padding-left: 1em;
+  border: none;
+}
+
+.icnSearch {
+  color: white;
+  background-color: #0065fc;
+}
+
+.filters {
+  padding: 1.8em 1.2em;
+  width: 100%;
+}
+
+.filters ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  box-shadow: inset 0px 0px 0px 2px #f2f2f2;
+  border-radius: 99px;
+}
+
+.filter div {
+  background-color: #deebff;
+  padding: 1.2em;
+  border-radius: 99px;
+  color: #0065fc;
+}
+
+.filter p {
+  padding: 1.2em;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.info {
+  margin: 1.8em 0;
+}
+
+/* Footer */
+
+footer {
+  background-color: #f2f2f2;
+  padding: 1.8em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* flex-direction: column; */
+}
+
+footer div:nth-child(1),
+div:nth-child(2) {
+  margin-bottom: 2.4em;
+}
+
+footer div {
+  margin-right: 3em;
+  flex: 1;
+}
+
+footer h3 {
+  margin-bottom: 0.9em;
+}
+
+footer li {
+  margin-bottom: 0.6em;
+}
