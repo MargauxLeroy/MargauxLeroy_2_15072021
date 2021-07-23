@@ -37,11 +37,15 @@ h1 {
 }
 
 h2 {
-  font-weight: 400;
+  font-size: 1.1em;
 }
 
 h3 {
-  font-size: 1.1em;
+  font-weight: 400;
+}
+
+section {
+  padding: 1.8em 1.2em;
 }
 
 /* Header */
@@ -80,10 +84,10 @@ h3 {
   border-bottom: 3px solid #0065fc;
 }
 
+/* Main */
+/* main {}  */
+
 /* Introduction */
-.introduction {
-  padding: 1.8em 1.2em;
-}
 
 .introduction h1 {
   padding-bottom: 0.5em;
@@ -96,7 +100,7 @@ h3 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.8em;
+  margin: 2em 0;
   border: 1px solid #f2f2f2;
   border-radius: 12px;
 }
@@ -124,9 +128,8 @@ h3 {
   background-color: #0065fc;
 }
 
-.filters {
-  padding: 1.8em 1.2em;
-  width: 100%;
+.filters h2 {
+  margin-bottom: 16px;
 }
 
 .filters ul {
@@ -134,7 +137,11 @@ h3 {
   flex-wrap: wrap;
 }
 
-.filter {
+.filters li {
+  margin: 0 12px 12px 0;
+}
+
+.filters .filter {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -142,25 +149,111 @@ h3 {
   border-radius: 99px;
 }
 
-.filter div {
+.filters .filterIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52.2px;
+  width: 52.2px;
   background-color: #deebff;
-  padding: 1.2em;
   border-radius: 99px;
   color: #0065fc;
 }
 
-.filter p {
-  padding: 1.2em;
+.filters .filterP {
+  display: flex;
+  align-items: center;
+  padding: 1.1em;
+}
+
+.filters .filter p {
   font-weight: 700;
   font-size: 14px;
 }
 
 .info {
-  margin: 1.8em 0;
+  margin: 1.4em 0;
+  display: flex;
+  align-items: start;
+}
+
+.info .infoIcon {
+  height: 30px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f2f2f2;
+  color: #0065fc;
+  border-radius: 99px;
+  margin-right: 14px;
+}
+
+/* Most popular*/
+.mostPopular {
+  background-color: #f2f2f2;
+}
+
+.mostPopular .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.mostPopular .accommodationCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4em;
+  margin-bottom: 1em;
+  background-color: white;
+  border-radius: 22px;
+  box-shadow: 5px 5px 5px #f2f2f2;
+}
+
+.mostPopular .accommodationCard .imgContainer {
+  height: 140px;
+  width: 140px;
+  background-color: #f2f2f2;
+  border-radius: 15px 0 0 15px;
+}
+
+.mostPopular .accommodationCard .imgContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 0 0 15px;
+}
+
+.mostPopular .accommodationCard .informationsContainer {
+  height: 140px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5em 1.2em;
+}
+
+.mostPopular .accommodationCard .informationsContainer .rating {
+  color: #0065fc;
+  font-size: 0;
+}
+
+.mostPopular .accommodationCard .informationsContainer .fas {
+  font-size: 12px;
+  padding-left: 2px;
+}
+
+.mostPopular .accommodationCard .informationsContainer .rating .default {
+  color: #dddddd;
+}
+
+.marseilleAccommodations {
+  padding: 1.8em 1.2em;
 }
 
 /* Footer */
-
 footer {
   background-color: #f2f2f2;
   padding: 1.8em;
@@ -170,17 +263,17 @@ footer {
   /* flex-direction: column; */
 }
 
-footer div:nth-child(1),
+/* footer div:nth-child(1),
 div:nth-child(2) {
   margin-bottom: 2.4em;
-}
+} */
 
 footer div {
-  margin-right: 3em;
+  margin: 0 4em 1.5em 0;
   flex: 1;
 }
 
-footer h3 {
+footer h2 {
   margin-bottom: 0.9em;
 }
 
