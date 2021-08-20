@@ -46,7 +46,7 @@ h3 {
 }
 
 section {
-  padding: 1.8em 1.2em;
+  padding: 2.4em calc(0.5em + 6vw);
 }
 
 /* Header */
@@ -314,10 +314,6 @@ section {
   }
 }
 
-section {
-  padding: 2.4em 1.4em;
-}
-
 .sectionTitle {
   display: flex;
   justify-content: space-between;
@@ -329,7 +325,7 @@ section {
   row-gap: 0.8em;
   column-gap: 0.8em;
   display: flex;
-  /* flex-direction: column; */
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -348,6 +344,18 @@ section {
 
 .accommodationCard {
   padding: 0.4em;
+}
+
+@media screen and (min-width: 580px) {
+  .cardsList {
+    column-gap: 1.6em;
+    row-gap: 1.6em;
+    justify-content: space-between;
+  }
+
+  .marseilleAccommodations .card {
+    max-width: 246px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
