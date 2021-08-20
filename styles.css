@@ -37,7 +37,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.1em;
+  font-size: 1em;
+  line-height: 1.2em;
 }
 
 h3 {
@@ -62,6 +63,11 @@ section {
   font-weight: 700;
 }
 
+.signIn:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
 .secondary {
   width: 100%;
 }
@@ -84,8 +90,27 @@ section {
   border-bottom: 3px solid #0065fc;
 }
 
-/* Main */
-/* main {}  */
+@media screen and (min-width: 1024px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .secondary {
+    flex: 1;
+  }
+
+  .linkMenu {
+    width: 120px;
+    padding: 0;
+    border: none;
+  }
+
+  /* .selected {
+    border-top: 3px solid #0065fc;
+  } */
+}
 
 /* Introduction */
 
@@ -95,6 +120,7 @@ section {
 
 .searchContainer {
   width: 100%;
+  max-width: 380px;
   height: 3em;
   display: flex;
   flex-direction: row;
@@ -107,13 +133,13 @@ section {
 
 .icnArea {
   height: 100%;
-  border-radius: 12px;
   border: none;
   padding: 14px;
 }
 
 .icnLocation {
   background-color: #f2f2f2;
+  border-radius: 12px 0 0 12px;
 }
 
 .searchInput {
@@ -126,6 +152,8 @@ section {
 .icnSearch {
   color: white;
   background-color: #0065fc;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .filters h2 {
@@ -147,6 +175,13 @@ section {
   align-content: center;
   box-shadow: inset 0px 0px 0px 2px #f2f2f2;
   border-radius: 99px;
+}
+
+.filters .filter:hover {
+  /* box-shadow: inset 0px 0px 0px 2px #dcdcdc; */
+  background-color: #deebff3c;
+  color: #0065fc;
+  cursor: pointer;
 }
 
 .filters .filterIcon {
@@ -172,9 +207,35 @@ section {
 }
 
 .info {
-  margin: 1.4em 0;
+  margin: 1.4em 0 0 0;
   display: flex;
   align-items: start;
+}
+
+@media screen and (min-width: 1024px) {
+  .introduction {
+    margin: 0 3.1em;
+    padding: 2.4em 0;
+  }
+
+  .filters {
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+  }
+
+  .filters h2,
+  .filters ul li {
+    margin: 0;
+  }
+
+  .filters ul {
+    column-gap: 1em;
+  }
+
+  .info {
+    line-height: 2;
+  }
 }
 
 .info .infoIcon {
@@ -189,88 +250,199 @@ section {
   margin-right: 14px;
 }
 
+/* List Sections */
+
+.accommodations {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1440px) {
+  .accommodations {
+    flex-direction: row-reverse;
+    column-gap: 2.4em;
+    margin: 0 3.1em;
+  }
+
+  .mostPopular,
+  .marseilleAccommodations {
+    border-radius: 20px;
+    justify-content: center;
+    padding: 2.4em;
+  }
+
+  .mostPopular {
+    flex: 1;
+  }
+
+  .marseilleAccommodations {
+    background-color: #f2f2f2;
+    flex: 3;
+  }
+}
+
+section {
+  padding: 2.4em 1.4em;
+}
+
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.cardsList {
+  row-gap: 0.8em;
+  column-gap: 0.8em;
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  background-color: white;
+  border-radius: 22px;
+  box-shadow: 0.3em 0.3em 10px #f2f2f2, -0.3em -0.3em 10px #f2f2f2;
+}
+
+.mostPopular .card {
+  max-width: 340px;
+}
+
+.accommodationCard {
+  padding: 0.4em;
+}
+
+@media screen and (min-width: 1024px) {
+  .cardsList {
+    column-gap: 1.6em;
+    row-gap: 1.6em;
+    justify-content: space-between;
+  }
+
+  .marseilleAccommodations .card {
+    max-width: 246px;
+  }
+}
+
+main img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 /* Most popular*/
 .mostPopular {
   background-color: #f2f2f2;
 }
 
-.mostPopular .title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2em;
-}
-
-.mostPopular .accommodationCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.4em;
-  margin-bottom: 1em;
-  background-color: white;
-  border-radius: 22px;
-  box-shadow: 5px 5px 5px #f2f2f2;
+.columnCard {
+  flex-direction: column;
 }
 
 .mostPopular .accommodationCard .imgContainer {
   height: 140px;
   width: 140px;
-  background-color: #f2f2f2;
-  border-radius: 15px 0 0 15px;
+}
+
+.marseilleAccommodations .imgContainer,
+.activities .imgContainer {
+  height: 115px;
+  width: 100%;
 }
 
 .mostPopular .accommodationCard .imgContainer img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
   border-radius: 15px 0 0 15px;
+}
+
+.marseilleAccommodations .columnCard .imgContainer img,
+.activities .columnCard .imgContainer img {
+  border-radius: 15px 15px 0 0;
+}
+
+.mostPopular .accommodationCard .informationsContainer,
+.marseilleAccommodations .accommodationCard .informationsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.4em 0.6em;
+  row-gap: 8px;
+  line-height: 1;
+}
+
+.mostPopular .accommodationCard .informationsContainer .informations h2 {
+  margin-bottom: 0.4em;
 }
 
 .mostPopular .accommodationCard .informationsContainer {
   height: 140px;
   width: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.5em 1.2em;
 }
 
-.mostPopular .accommodationCard .informationsContainer .rating {
+.marseilleAccommodations .accommodationCard .informationsContainer,
+.activities .activityCard .informationsContainer {
+  /* min-width: 220px; */
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  line-height: 1;
+  padding-top: 12px;
+}
+
+.activities .activityCard .informationsContainer {
+  margin: 1em;
+  padding: 0;
+}
+
+.activities .accommodationCard .informationsContainer {
+  padding: 28px;
+}
+
+.mostPopular .accommodationCard .informationsContainer .rating,
+.marseilleAccommodations .accommodationCard .informationsContainer .rating {
   color: #0065fc;
   font-size: 0;
 }
 
-.mostPopular .accommodationCard .informationsContainer .fas {
+.mostPopular .accommodationCard .informationsContainer .fas,
+.marseilleAccommodations .accommodationCard .informationsContainer .fas {
   font-size: 12px;
   padding-left: 2px;
 }
 
-.mostPopular .accommodationCard .informationsContainer .rating .default {
+.mostPopular .accommodationCard .informationsContainer .rating .default,
+.marseilleAccommodations
+  .accommodationCard
+  .informationsContainer
+  .rating
+  .default {
   color: #dddddd;
 }
 
-.marseilleAccommodations {
-  padding: 1.8em 1.2em;
+/* Accomodations */
+
+.marseilleAccommodations .seeMore {
+  margin: 32px 0 0 0;
 }
 
 /* Footer */
+
 footer {
   background-color: #f2f2f2;
-  padding: 1.8em;
+  padding: 0 1.8em 1.8em 1.8em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* flex-direction: column; */
 }
 
-/* footer div:nth-child(1),
-div:nth-child(2) {
-  margin-bottom: 2.4em;
-} */
-
 footer div {
-  margin: 0 4em 1.5em 0;
+  min-width: 15em;
   flex: 1;
+  margin-top: 2em;
 }
 
 footer h2 {
@@ -279,4 +451,9 @@ footer h2 {
 
 footer li {
   margin-bottom: 0.6em;
+}
+
+footer li:hover {
+  text-decoration: underline;
+  text-underline-position: under;
 }
