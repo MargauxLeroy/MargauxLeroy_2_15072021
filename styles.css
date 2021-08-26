@@ -386,7 +386,6 @@ main img {
 }
 
 .accommodations .mostPopular .card {
-  /* max-width: 540px; */
   height: calc(120px + 8vw);
 }
 
@@ -398,9 +397,35 @@ main img {
 }
 
 @media screen and (min-width: 1366px) {
+  .accommodations {
+    flex-direction: row-reverse;
+    column-gap: 2.4em;
+    margin: 0 3.1em;
+  }
+
   .accommodations .mostPopular .card {
     width: 100%;
     flex: auto;
+  }
+
+  .marseilleAccommodations .card {
+    max-width: 246px;
+  }
+
+  .accommodations .mostPopular,
+  .accommodations .marseilleAccommodations {
+    border-radius: 20px;
+    justify-content: center;
+    padding: 2.4em;
+  }
+
+  .accommodations .mostPopular {
+    flex: 1.2;
+  }
+
+  .accommodations .marseilleAccommodations {
+    background-color: #f2f2f2;
+    flex: 3;
   }
 }
 
@@ -428,19 +453,22 @@ main img {
 
 /* In Marseille */
 
-.accommodations .marseilleAccommodations .columnCard {
+.accommodations .marseilleAccommodations .columnCard,
+.activities .columnCard {
   flex-direction: column;
   max-width: 600px;
 }
 
 @media screen and (min-width: 680px) {
-  .accommodations .marseilleAccommodations .columnCard {
+  .accommodations .marseilleAccommodations .columnCard,
+  .activities .columnCard {
     width: 48.9%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .accommodations .marseilleAccommodations .columnCard {
+  .accommodations .marseilleAccommodations .columnCard,
+  .activities .columnCard {
     width: 32.2%;
   }
 }
@@ -448,6 +476,7 @@ main img {
 .marseilleAccommodations .imgContainer,
 .activities .imgContainer {
   height: calc(6em + 4vw);
+  min-height: 128px;
   max-height: 140px;
   width: 100%;
 }
@@ -476,15 +505,6 @@ main img {
   padding-top: 12px;
 }
 
-.activities .activityCard .informationsContainer {
-  margin: 1em;
-  padding: 0;
-}
-
-.activities .accommodationCard .informationsContainer {
-  padding: 28px;
-}
-
 .mostPopular .accommodationCard .informationsContainer .rating,
 .marseilleAccommodations .accommodationCard .informationsContainer .rating {
   color: #0065fc;
@@ -506,62 +526,41 @@ main img {
   color: #dddddd;
 }
 
-@media screen and (min-width: 1366px) {
-  .activities .cardsList {
-    flex-wrap: nowrap;
-  }
-
-  .marseilleAccommodations .card {
-    max-width: 246px;
-  }
-
-  .accommodations {
-    flex-direction: row-reverse;
-    column-gap: 2.4em;
-    margin: 0 3.1em;
-  }
-
-  .mostPopular,
-  .marseilleAccommodations {
-    border-radius: 20px;
-    justify-content: center;
-    padding: 2.4em;
-  }
-
-  .mostPopular {
-    flex: 1.2;
-  }
-
-  .marseilleAccommodations {
-    background-color: #f2f2f2;
-    flex: 3;
-  }
-}
-
 /*******************************/
 /* Activities */
 /*******************************/
 
-@media screen and (min-width: 1366px) {
-  .activities {
-    padding: 2.4em 0;
-    margin: 0 3.1em;
-  }
+.activities .activityCard .informationsContainer {
+  padding: 1em;
+}
 
+@media screen and (min-width: 1366px) {
   .activities .cardsList {
+    max-height: 440px;
+    flex-wrap: nowrap;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 6fr 1fr 1fr 4fr;
-    /* min-height: 440px; */
+    row-gap: 2.4em;
+    column-gap: 2.4em;
+  }
+
+  .activities .imgContainer {
+    /* height: 100%; */
+    height: auto;
+    max-height: initial;
+    min-height: initial;
+    flex: 1;
+    overflow: hidden;
   }
 
   .activities .card {
-    max-width: none;
-  }
-
-  .activities .imgContainer.big {
+    position: relative;
     height: 100%;
-    /* height: 386px; */
+    display: flex;
+    max-width: none;
+    overflow: hidden;
+    width: 100%;
   }
 
   div.activityCard:nth-child(1) {
