@@ -12,6 +12,13 @@
   font-size: 16px;
 }
 
+html {
+  --hover-blue: #015be2;
+  --blue: #0065fc;
+  --light-blue: #deebff;
+  --grey: #f2f2f2;
+}
+
 ul {
   list-style-type: none;
 }
@@ -31,7 +38,7 @@ button {
 }
 
 .blue {
-  color: #0065fc;
+  color: var(--blue);
 }
 
 h1 {
@@ -75,8 +82,12 @@ main img {
   grid-template-columns: min-content auto auto min-content;
 }
 
-.menu img {
+.menu .logo {
   margin: 24px 0 0 24px;
+}
+
+.menu .logo:hover svg path {
+  fill: var(--hover-blue);
 }
 
 .menu .signIn {
@@ -106,21 +117,21 @@ main img {
 .menu .linkMenu {
   width: 50%;
   height: 100%;
-  border-bottom: 3px solid #f2f2f2;
+  border-bottom: 3px solid var(--grey);
   text-align: center;
 }
 
 .menu .linkMenu a:hover {
-  color: #0065fc;
+  color: var(--blue);
   cursor: pointer;
 }
 
 .menu .linkMenu.selected {
-  border-bottom: 3px solid #0065fc;
+  border-bottom: 3px solid var(--blue);
 }
 
 .menu .linkMenu.selected a {
-  color: #0065fc;
+  color: var(--blue);
 }
 
 @media screen and (min-width: 580px) {
@@ -129,7 +140,7 @@ main img {
     height: 76px;
   }
 
-  .menu img {
+  .menu .logo {
     margin: 0;
     align-self: center;
   }
@@ -159,7 +170,7 @@ main img {
 
   .menu .linkMenu.selected {
     border-bottom: none;
-    border-top: 3px solid #0065fc;
+    border-top: 3px solid var(--blue);
   }
 }
 
@@ -185,7 +196,7 @@ main img {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #f2f2f2;
+  border: 1px solid var(--grey);
   border-radius: 12px;
 }
 
@@ -195,7 +206,7 @@ main img {
 }
 
 .introduction .searchContainer .icnLocation {
-  background-color: #f2f2f2;
+  background-color: var(--grey);
   border-radius: 12px 0 0 12px;
   padding: 14px 17px;
 }
@@ -210,7 +221,7 @@ main img {
 
 .introduction .searchContainer .searchInput:focus {
   outline: none;
-  border: 1px solid #0065fc;
+  border: 1px solid var(--blue);
 }
 
 .introduction .searchContainer .searchInput:hover {
@@ -219,7 +230,7 @@ main img {
 
 .introduction .searchContainer .inputValidation {
   color: white;
-  background-color: #0065fc;
+  background-color: var(--blue);
   border-radius: 12px;
   cursor: pointer;
   padding: 14px 15px;
@@ -227,7 +238,7 @@ main img {
 }
 
 .introduction .searchContainer .inputValidation:hover {
-  background-color: #015be2;
+  background-color: var(--hover-blue);
 }
 
 .introduction .searchContainer .inputValidation.btnSearch {
@@ -253,14 +264,13 @@ main img {
   display: flex;
   flex-direction: row;
   align-content: center;
-  box-shadow: inset 0px 0px 0px 2px #f2f2f2;
+  box-shadow: inset 0px 0px 0px 2px var(--grey);
   border-radius: 99px;
 }
 
 .introduction .filters .filter:hover {
-  /* box-shadow: inset 0px 0px 0px 2px #dcdcdc; */
   background-color: #deebff3c;
-  color: #0065fc;
+  color: var(--blue);
   cursor: pointer;
 }
 
@@ -270,9 +280,9 @@ main img {
   justify-content: center;
   height: 52.2px;
   width: 52.2px;
-  background-color: #deebff;
+  background-color: var(--light-blue);
   border-radius: 99px;
-  color: #0065fc;
+  color: var(--blue);
 }
 
 .introduction .filters .filterP {
@@ -296,8 +306,8 @@ main img {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #f2f2f2;
-  color: #0065fc;
+  border: 1px solid var(--grey);
+  color: var(--blue);
   border-radius: 99px;
 }
 
@@ -357,6 +367,7 @@ main img {
   .accommodations .mostPopular .cardsList {
     flex-wrap: wrap;
     flex-direction: column;
+    flex: 1;
   }
 }
 
@@ -368,6 +379,19 @@ main img {
   background-color: white;
   border-radius: 22px;
   box-shadow: 0.3em 0.3em 10px #e7e7e7, -0.3em -0.3em 10px #e7e7e7;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card img {
+  transition: scale 0.3s ease-in-out;
+}
+
+.card .imgContainer {
+  overflow: hidden;
+}
+
+.card:hover img {
+  scale: 1.03;
 }
 
 .card:hover {
@@ -393,7 +417,7 @@ main img {
 /* Most popular*/
 
 .accommodations .mostPopular {
-  background-color: #f2f2f2;
+  background-color: var(--grey);
 }
 
 .accommodations .mostPopular .card {
@@ -402,7 +426,7 @@ main img {
 
 @media screen and (min-width: 1024px) {
   .accommodations .mostPopular .card {
-    height: 160px;
+    max-height: 160px;
     flex: 1;
   }
 }
@@ -414,6 +438,12 @@ main img {
     margin: 0 3.1em;
   }
 
+  .accommodations .mostPopular {
+    display: flex;
+    flex-direction: column;
+    flex: 1.2;
+  }
+
   .accommodations .mostPopular .card {
     width: 100%;
     flex: auto;
@@ -421,6 +451,7 @@ main img {
 
   .marseilleAccommodations .card {
     max-width: 246px;
+    max-height: 230px;
   }
 
   .accommodations .mostPopular,
@@ -430,23 +461,16 @@ main img {
     padding: 2.4em;
   }
 
-  .accommodations .mostPopular {
-    flex: 1.2;
-  }
-
   .accommodations .marseilleAccommodations {
-    background-color: #f2f2f2;
+    background-color: var(--grey);
     flex: 3;
   }
 }
 
 .accommodations .mostPopular .accommodationCard .imgContainer {
+  border-radius: 15px 0 0 15px;
   height: 100%;
   flex: 1;
-}
-
-.accommodations .mostPopular .accommodationCard .imgContainer img {
-  border-radius: 15px 0 0 15px;
 }
 
 .accommodations .mostPopular .accommodationCard .informationsContainer {
@@ -480,7 +504,11 @@ main img {
 @media screen and (min-width: 1024px) {
   .accommodations .marseilleAccommodations .columnCard,
   .activities .columnCard {
-    width: 32.2%;
+    width: calc(33% - 0.8em);
+  }
+
+  .accommodations .marseilleAccommodations .cardsList {
+    row-gap: 1.2em;
   }
 }
 
@@ -490,10 +518,6 @@ main img {
   min-height: 128px;
   max-height: 140px;
   width: 100%;
-}
-
-.marseilleAccommodations .columnCard .imgContainer img,
-.activities .columnCard .imgContainer img {
   border-radius: 15px 15px 0 0;
 }
 
@@ -518,7 +542,7 @@ main img {
 
 .mostPopular .accommodationCard .informationsContainer .rating,
 .marseilleAccommodations .accommodationCard .informationsContainer .rating {
-  color: #0065fc;
+  color: var(--blue);
   font-size: 0;
 }
 
@@ -539,6 +563,11 @@ main img {
 
 .accommodations .marseilleAccommodations .seeMore {
   margin: 32px 0 0 0;
+}
+
+.accommodations .marseilleAccommodations .seeMore:hover {
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
 /*******************************/
@@ -614,17 +643,35 @@ main img {
 /*******************************/
 
 footer {
-  background-color: #f2f2f2;
-  padding: 0 1.8em 1.8em 1.8em;
+  background-color: var(--grey);
+  padding: 3em calc(0.3em + 4.2vw);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 footer div {
-  min-width: 15em;
-  flex: 1;
+  width: 100%;
+  /* min-width: 15em; */
+  /* flex: 1; */
+  padding: 0 1em;
+}
+
+footer div:nth-child(2) {
   margin-top: 2em;
+}
+
+footer div:nth-child(3) {
+  margin-top: 2em;
+}
+
+@media screen and (min-width: 834px) {
+  footer div,
+  footer div:nth-child(2),
+  footer div:nth-child(3) {
+    flex: 1;
+    margin-top: 0;
+  }
 }
 
 footer h2 {
