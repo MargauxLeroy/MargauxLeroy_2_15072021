@@ -1,4 +1,4 @@
 # MargauxLeroy_2_15072021
 
-** Projet OpenClassrooms
-2) Transformez une maquette en site web
+<strong>Projet n°2 OpenClassrooms :</strong> <br>
+Transformez une maquette en site web
