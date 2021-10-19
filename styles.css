@@ -104,7 +104,7 @@ main img {
   text-underline-position: under;
 }
 
-.menu ul {
+.menu ol {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
@@ -145,7 +145,7 @@ main img {
     align-self: center;
   }
 
-  .menu ul {
+  .menu ol {
     grid-row: 1;
     grid-column: 3;
     margin-top: 0;
@@ -562,6 +562,8 @@ main img {
 }
 
 .accommodations .marseilleAccommodations .seeMore {
+  font-size: 1em;
+  line-height: 1.2em;
   margin: 32px 0 0 0;
 }
 
